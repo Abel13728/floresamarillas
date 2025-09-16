@@ -1,9 +1,83 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Welcome to Flores Amarillas</title>
+  <meta charset="UTF-8">
+  <title>Flores amarillas para Lene 🌻💛</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fffbea;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    h1 {
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      text-align: center;
+      font-size: 2.3em;
+      color: #d68b00;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .bouquet {
+      width: 280px;
+      z-index: 1;
+    }
+
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 28px;
+      height: 28px;
+      background: yellow;
+      border-radius: 50%;
+      opacity: 0.9;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to the Flores Amarillas website. Enjoy your stay!</p>
+  <h1>🌻💛 Flores amarillas para mi princesa hermosa Lene �❤️</h1>
+  
+  <!-- Imagen del ramo -->
+  <img class="bouquet" 
+       src="https://i.ibb.co/ssC0k2C/yellow-bouquet.png" 
+       alt="Ramo de flores amarillas">
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bf7f2ecba5.mp3?filename=romantic-inspirational-piano-112191.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * window.innerWidth + "px";
+      petal.style.animationDuration = (3 + Math.random() * 5) + "s";
+      petal.style.background = ["#FFD700","#FFEA00","#FFCC33","#FFF176"][Math.floor(Math.random()*4)];
+      document.body.appendChild(petal);
+
+      setTimeout(() => petal.remove(), 8000);
+    }
+
+    setInterval(createPetal, 250);
+  </script>
 </body>
 </html>
