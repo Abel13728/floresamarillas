@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>Welcome to Flores Amarillas</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>Welcome to the Flores Amarillas website. Enjoy your stay!</p>
+</body>
+</html>
